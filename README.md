@@ -10,6 +10,14 @@ Use this repository to understand:
 
 The registry references AWC contracts and evidence. It does not redefine the contract format; that remains in `awc-spec`.
 
+## License
+
+`awc-registry` is source-available under the Business Source License 1.1 (BUSL-1.1).
+
+This repository is intended to support submission, verification, and listing lifecycle work for an AWC registry layer. Because it sits closer to marketplace, distribution, and commercial control concerns than `awc-spec` or `awc-devkit`, its license is intentionally more restrictive than those repositories.
+
+See `LICENSE` and `docs/licensing.md` for the repository-specific terms and rationale.
+
 ## Submission Model
 
 A submission typically includes:
@@ -40,6 +48,7 @@ After verification, a listing can move through these states:
 
 ## Developer Docs
 
+- `docs/licensing.md`
 - `docs/submit-a-worker.md`
 - `docs/after-submission.md`
 - `docs/submission-process.md`
