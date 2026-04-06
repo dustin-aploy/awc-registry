@@ -1,0 +1,141 @@
+{
+  "kind": "AWCRegistryEntry",
+  "registry_version": "0.1.0",
+  "listing_id": "self-hosted-support-worker",
+  "references": {
+    "awc_spec_version": "0.1.0",
+    "test_suite_version": "0.1.0",
+    "report_id": "self-hosted-support-worker-20260406",
+    "contract_ref": "https://example.org/self-hosted-support-worker/worker.yaml"
+  },
+  "project": {
+    "slug": "self-hosted-support-worker",
+    "display_name": "Self-Hosted Support Worker",
+    "provider_id": "exampleco-support-ops",
+    "homepage": "https://example.org/self-hosted-support-worker",
+    "repository": "https://github.com/example/self-hosted-support-worker",
+    "maintainers": [
+      {
+        "name": "Daniel Ruiz",
+        "contact": "support-ops@example.com",
+        "organization": "ExampleCo"
+      }
+    ]
+  },
+  "listing": {
+    "tier": "compatible",
+    "verification_status": "verified",
+    "listing_status": "listed",
+    "status": "active",
+    "protocol_version": "0.1.0",
+    "test_suite": {
+      "name": "awc-test-suite",
+      "version": "0.1.0",
+      "profile": "self-hosted-onboarding"
+    },
+    "public_summary": "Self-hosted support worker with public onboarding evidence and declaration-owned invocation hints.",
+    "listed_at": "2026-04-06T08:30:00Z",
+    "last_reviewed_at": "2026-04-06T08:35:00Z",
+    "expires_at": "2026-10-03T08:35:00Z",
+    "review_notes": [
+      "Compatible self-hosted worker listing backed by public declaration and onboarding evidence.",
+      "Invocation and healthcheck details are referenced through the published declaration artifact."
+    ]
+  },
+  "declaration": {
+    "agent_id": "support.self_hosted.tier1",
+    "artifact_uri": "https://example.org/self-hosted-support-worker/worker.yaml",
+    "declaration_digest": "4b7f9c3ad5e4f3d2f4a2b3c4d5e6f7089abcdeffedcba9876543210011223344",
+    "source_commit": "8f4d2c1b"
+  },
+  "evidence": {
+    "compliance_report": {
+      "kind": "AWCComplianceReport",
+      "report_id": "self-hosted-support-worker-20260406",
+      "generated_at": "2026-04-06T08:00:00Z",
+      "subject": {
+        "agent_id": "support.self_hosted.tier1",
+        "declaration_digest": "4b7f9c3ad5e4f3d2f4a2b3c4d5e6f7089abcdeffedcba9876543210011223344",
+        "artifact_uri": "https://example.org/self-hosted-support-worker/worker.yaml"
+      },
+      "protocol_version": "0.1.0",
+      "profile": {
+        "name": "self-hosted-onboarding",
+        "version": "0.1.0",
+        "issuer": "awc-test-suite"
+      },
+      "summary": {
+        "status": "pass",
+        "passed": 17,
+        "failed": 0,
+        "warnings": 0,
+        "notes": [
+          "project=self-hosted-support-worker",
+          "compatibility_level=compatible",
+          "self_hosted_metadata=present",
+          "http_examples=valid",
+          "test_suite_version=0.1.0"
+        ]
+      },
+      "checks": [
+        {
+          "id": "identity-required",
+          "pillar": "identity",
+          "description": "identity must be required",
+          "status": "pass",
+          "evidence": ["$.identity is required"]
+        },
+        {
+          "id": "self-hosted-metadata",
+          "pillar": "identity",
+          "description": "self-hosted declarations should include minimal platform hints",
+          "status": "pass",
+          "evidence": ["invoke_url", "healthcheck_url", "auth_type"]
+        },
+        {
+          "id": "self-hosted-http-shapes",
+          "pillar": "audit",
+          "description": "self-hosted invocation and healthcheck examples should match declaration hints",
+          "status": "pass",
+          "evidence": ["POST invoke request", "GET healthcheck request"]
+        }
+      ],
+      "attestations": [
+        {
+          "name": "awc-test-suite",
+          "role": "suite-runner",
+          "timestamp": "2026-04-06T08:00:00Z",
+          "statement": "Generated compatible self-hosted onboarding evidence for self-hosted-support-worker."
+        }
+      ]
+    },
+    "report_artifact_uri": "https://example.org/self-hosted-support-worker/reports/onboarding-report.json",
+    "report_signature": {
+      "artifact_uri": "https://example.org/self-hosted-support-worker/reports/onboarding-report.sig",
+      "algorithm": "ed25519",
+      "signer": "ExampleCo Release Engineering",
+      "key_id": "ed25519:exampleco-self-hosted-worker-key",
+      "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "verified": true
+    },
+    "transparency_log_uri": "https://transparency.example.org/entries/self-hosted-support-worker-20260406",
+    "public_notes": [
+      "The worker is self-hosted and exposes invocation details through declaration-owned platform hints.",
+      "This listing does not imply platform-hosted execution or platform-managed reviews."
+    ]
+  },
+  "governance": {
+    "listed_by": "awc-registry maintainers",
+    "review_policy": "compatible-review-v1",
+    "appeals_uri": "https://registry.example.org/policies/appeals",
+    "issue_tracker": "https://github.com/example/self-hosted-support-worker/issues"
+  },
+  "submission": {
+    "submitted_at": "2026-04-06T07:45:00Z",
+    "submitted_by": "support-ops@example.com",
+    "submission_notes": [
+      "Developer submitted declaration, repository, and public onboarding evidence.",
+      "Registry verification reused the self-hosted onboarding profile from awc-devkit."
+    ]
+  }
+}
